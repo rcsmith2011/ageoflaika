@@ -25,8 +25,11 @@ class ViewController: UIViewController {
 
     @IBAction func convertToDogYears(sender: UIButton) {
         humanAge.resignFirstResponder()
-        let years = humanAge.text.toInt()!
-        dogAge.text = "\(years*7) in dog years"
+        var years = humanAge.text.toInt()
+        if (years == nil) {
+            years = 0
+        }
+        dogAge.text = "\(years! * 7) in dog years"
         dogAge.hidden = false;
     }
 
