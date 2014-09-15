@@ -33,5 +33,25 @@ class ViewController: UIViewController {
         dogAge.hidden = false;
     }
 
+    @IBAction func convertToRealDogYears(sender: UIButton) {
+        
+        humanAge.resignFirstResponder()
+        var yearsText = humanAge.text
+        var years = (yearsText as NSString).floatValue
+//        if (years == nil) {
+//            years = 0
+//        }
+        if (years <= 2)
+        {
+            years *= 10.5
+        }
+        else
+        {
+            years = (years-2)*4 + 10.5*2
+        }
+        dogAge.text = "\(years) in dog years"
+        dogAge.hidden = false;
+        
+    }
 }
 
